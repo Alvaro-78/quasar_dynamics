@@ -1,10 +1,11 @@
-<div class="container-sm" *ngIf="user">
+<app-nav></app-nav>
+<div class="container-sm mt-2" *ngIf="user">
   <h2>Detalles del Usuario</h2>
-  <div class="d-flex ">
-    <img src="{{user.avatar}}" class="rounded-circle" alt="Avatar" width="50" height="50">
-    <div class="">
-      <p>Nombre: {{ user.first_name }} {{ user.last_name }}</p>
-      <p>Email: {{user.email}}</p>
+  <div class="d-flex mt-4 ">
+    <img src="{{user.avatar}}" class="rounded-circle m-2" alt="Avatar" width="50" height="50">
+    <div class="userData">
+      <p class="m-2">Nombre: {{ user.first_name }} {{ user.last_name }}</p>
+      <p >Email: {{user.email}}</p>
     </div>
   </div>
 

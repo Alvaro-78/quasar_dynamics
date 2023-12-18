@@ -1,1 +1,25 @@
 <app-nav></app-nav>
+<div class="container-sm" *ngIf="userLoginOn; else notLoggedIn">
+  <div *ngIf="users.length > 0; else noUsers">
+    <h3>Usuarios:</h3>
+    <div class="users-list">
+      <ul class="no-bullets m-2 row">
+        <li class="col-md-4" style="list-style-type: none;" *ngFor="let user of users">
+         <div class="mb-4" [routerLink]="['/user', user.id]" style="cursor: pointer;">
+            <img src="{{ user.avatar }}" alt="avatar" style="margin-right: 10px;"/>
+            {{ user.first_name }} {{ user.last_name }}
+        </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <ng-template #noUsers>
+    <p>No hay usuarios para mostrar.</p>
+  </ng-template>
+</div>
+
+<ng-template #notLoggedIn>
+  <div class="container-sm">
+    <p>Por favor, inicia sesión para ver el dashboard.</p>
+  </div>
+</ng-template>
