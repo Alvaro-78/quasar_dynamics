@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoginService } from 'src/app/services/auth/login/login.component';
+import { User } from 'src/app/services/user';
 
 @Component({
   selector: 'app-user-details',
@@ -8,8 +9,7 @@ import { LoginService } from 'src/app/services/auth/login/login.component';
   styleUrls: ['./user-details.component.css'],
 })
 export class UserDetailsComponent implements OnInit {
-  user: any;
-
+  user: User | null | undefined = null;
   constructor(
     private route: ActivatedRoute,
     private loginService: LoginService

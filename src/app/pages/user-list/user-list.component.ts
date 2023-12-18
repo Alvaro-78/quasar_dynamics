@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from 'src/app/services/auth/login/login.component';
+import { User } from 'src/app/services/user';
 
 @Component({
   selector: 'app-user-list',
@@ -8,7 +9,7 @@ import { LoginService } from 'src/app/services/auth/login/login.component';
 })
 export class UserListComponent implements OnInit {
   isLoggedIn = false;
-  users: any[] = [];
+  users: User[] = [];
 
   constructor(private loginService: LoginService) {}
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, catchError, throwError, BehaviorSubject, tap } from 'rxjs';
 import { User } from '../../user';
+import { UsersResponse } from '../../userResponse';
 
 @Injectable({
   providedIn: 'root',
@@ -46,9 +47,9 @@ export class LoginService {
     return this.currentUserLogin.asObservable();
   }
 
-  getUsers(page: number = 1): Observable<any> {
+  getUsers(page: number = 1): Observable<UsersResponse> {
     const url = `${this.usersUrl}?page=${page}`;
-    return this.http.get<any>(url).pipe(catchError(this.handleError));
+    return this.http.get<UsersResponse>(url).pipe(catchError(this.handleError));
   }
 
   getUserById(userId: string): Observable<User> {
