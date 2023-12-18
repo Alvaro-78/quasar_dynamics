@@ -1,0 +1,11 @@
+<div class="container-sm" *ngIf="user">
+  <h2>Detalles del Usuario</h2>
+  <div class="d-flex ">
+    <img src="{{user.avatar}}" class="rounded-circle" alt="Avatar" width="50" height="50">
+    <div class="">
+      <p>Nombre: {{ user.first_name }} {{ user.last_name }}</p>
+      <p>Email: {{user.email}}</p>
+    </div>
+  </div>
+
+</div>
