@@ -22,14 +22,14 @@ export class LoginComponent {
   ) {}
 
   // Simplifica los getters
-  get f() {
+  get formData() {
     return this.loginForm.controls;
   }
 
   login() {
     if (this.loginForm.valid) {
-      const email = this.f.email.value ?? '';
-      const password = this.f.password.value ?? '';
+      const email = this.formData.email.value ?? '';
+      const password = this.formData.password.value ?? '';
 
       this.loginService.login(email, password).subscribe({
         next: (userData) => {
